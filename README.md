@@ -42,6 +42,7 @@ Repository: [albenchris/shop-shop](https://github.com/albenchris/shop-shop)
 * Apollo Server
 * GraphQL
 * Stripe
+* Redux
 
 
 ***
