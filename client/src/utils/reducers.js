@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+// import { useReducer } from 'react';
 import {
     UPDATE_PRODUCTS,
     UPDATE_CATEGORIES,
@@ -11,7 +11,15 @@ import {
     TOGGLE_CART
 } from './actions';
 
-export const reducer = (state, action) => {
+const initialState = {
+    products: [],
+    cart: [],
+    cartOpen: false,
+    categories: [],
+    currentCategory: ''
+}
+
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
         // ========== PRODUCT/CATEGORY CASES START =============================================================================================
         // if action type value is the value of `UPDATE_PRODUCTS`, return a new state object with an updated products array
@@ -20,7 +28,7 @@ export const reducer = (state, action) => {
                 ...state,
                 products: [...action.products]
             };
-        
+
         // if action type value is the value of `UPDATE_CATEGORIES`, return a new state object with an updated categories array
         case UPDATE_CATEGORIES:
             return {
@@ -58,7 +66,7 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 cartOpen: newState.length > 0,
-                cart: newState                
+                cart: newState
             };
 
         case UPDATE_CART_QUANTITY:
