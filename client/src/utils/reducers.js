@@ -19,7 +19,7 @@ const initialState = {
     currentCategory: ''
 }
 
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         // ========== PRODUCT/CATEGORY CASES START =============================================================================================
         // if action type value is the value of `UPDATE_PRODUCTS`, return a new state object with an updated products array
@@ -101,6 +101,4 @@ export const reducer = (state = initialState, action) => {
     }
 };
 
-// export function useProductReducer(initialState) {
-//     return useReducer(reducer, initialState);
-// };
+export default reducer;
